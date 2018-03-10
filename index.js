@@ -12,6 +12,7 @@ const bot = new BootBot({
 
 bot.on('message', (payload, chat) => {
   const txt = payload.message.text
+  console.log(txt)
   chat.say(`Echo: ${txt}`)
 })
 
@@ -26,4 +27,4 @@ bot.hear(['hello', 'hi', /hey( there)?/i], (payload, chat) => {
     })
 })
 
-bot.start(3000)
+bot.start()
