@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch '*/*.js' --exec babel-node index.js",
-    "prod": "forever start babel-node index.js"
+    "prod": "forever start server.js"
   },
   "author": "Maarten Coppens",
   "license": "ISC",
