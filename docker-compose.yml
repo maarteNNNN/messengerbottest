@@ -13,3 +13,4 @@ services:
     volumes:
       .:/home/app/webapp
       ./acme/:/var/lib/acme
+    restart: always
