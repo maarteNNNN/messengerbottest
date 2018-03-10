@@ -33,7 +33,7 @@ encrypt.create({
   email: 'martinuske@gmail.com',
   agreeTos: true,
   approveDomains: ['13bazar.com.br'],
-  app: bot.start(433)
-}).listen(80, 433)
+  app: bot.start(3000)
+}).listen(80, 433, 3000)
 
 // bot.start()
