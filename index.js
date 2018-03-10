@@ -4,7 +4,7 @@ import encrypt from 'greenlock-express'
 
 env.config()
 // WORKS
-console.log(process.env.TOKEN)
+console.log(process.env.MESSENGERTOKEN)
 const bot = new BootBot({
   accessToken: process.env.MESSENGERTOKEN,
   verifyToken: process.env.WEBHOOKTOKEN,
