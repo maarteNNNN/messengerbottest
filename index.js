@@ -1,5 +1,6 @@
 import BootBot from 'bootbot'
 import env from 'dotenv'
+import encrypt from 'greenlock-express'
 
 env.config()
 // WORKS
@@ -27,4 +28,10 @@ bot.hear(['hello', 'hi', /hey( there)?/i], (payload, chat) => {
     })
 })
 
-bot.start()
+encrypt.create({
+  server: 'staging',
+  email: 'martinuske@gmail.com',
+  agreeTos: true,
+  approveDomains: ['13bazar.com.br'],
+  app: bot.start()
+}).listen(80, 433)
