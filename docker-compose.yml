@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  nginx-nodejs:
+    container_name: bot
+    image: cpoppema/docker-nginx-nodejs-lets-encrypt
+    expose:
+      - 80
+      - 443
+    ports:
+      - 80:3000
+      - 443:3000
+    environment:
+      DOMAIN: 13bazar.com.br
+    volumes:
+      .:/home/app/webapp
+      ./acme/:/var/lib/acme

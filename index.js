@@ -10,18 +10,20 @@ const bot = new BootBot({
   appSecret: process.env.APPSECRET
 })
 
-// bot.on('message', (payload, chat) => {
-//   const txt = payload.message.text
-//   chat.say(`Echo: ${txt}`)
-// })
+bot.on('message', (payload, chat) => {
+  const txt = payload.message.text
+  chat.say(`Echo: ${txt}`)
+})
 
 bot.hear(['hello', 'hi', /hey( there)?/i], (payload, chat) => {
   console.log('The user said hello')
-  chat.say('Hello, Im created by my master Maarten Coppens').then(() => {
-    chat.say('What can I do for you?')
-  }).then(() => {
-    chat.say('Henrique I know it was you that texted me!')
-  })
+  chat.say('Hello, Im created by my master Maarten Coppens')
+    .then(() => {
+      chat.say('What can I do for you?')
+    })
+    .then(() => {
+      chat.say('Henrique I know it was you that texted me!')
+    })
 })
 
-bot.start()
+bot.start(3000)
