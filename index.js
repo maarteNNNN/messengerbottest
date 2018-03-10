@@ -4,7 +4,7 @@ import encrypt from 'greenlock-express'
 
 env.config()
 // WORKS
-// console.log(process.env.TOKEN)
+console.log(process.env.TOKEN)
 const bot = new BootBot({
   accessToken: process.env.MESSENGERTOKEN,
   verifyToken: process.env.WEBHOOKTOKEN,
@@ -33,5 +33,5 @@ encrypt.create({
   email: 'martinuske@gmail.com',
   agreeTos: true,
   approveDomains: ['13bazar.com.br'],
-  app: bot.start()
+  app: bot.start(433)
 }).listen(80, 433)
