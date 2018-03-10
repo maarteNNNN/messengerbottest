@@ -4,7 +4,7 @@ import encrypt from 'greenlock-express'
 
 env.config()
 // WORKS
-console.log(process.env.MESSENGERTOKEN)
+// console.log(process.env.MESSENGERTOKEN)
 const bot = new BootBot({
   accessToken: process.env.MESSENGERTOKEN,
   verifyToken: process.env.WEBHOOKTOKEN,
@@ -28,10 +28,12 @@ bot.hear(['hello', 'hi', /hey( there)?/i], (payload, chat) => {
     })
 })
 
-encrypt.create({
-  server: 'staging',
-  email: 'martinuske@gmail.com',
-  agreeTos: true,
-  approveDomains: ['13bazar.com.br'],
-  app: bot.start(433)
-}).listen(80, 433)
+// encrypt.create({
+//   server: 'staging',
+//   email: 'martinuske@gmail.com',
+//   agreeTos: true,
+//   approveDomains: ['13bazar.com.br'],
+//   app: bot.start(433)
+// }).listen(80, 433)
+
+bot.start()
